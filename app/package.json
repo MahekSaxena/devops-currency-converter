@@ -1,0 +1,23 @@
+{
+  "name": "currency-converter-ci-cd",
+  "version": "1.0.0",
+  "description": "A lightweight Currency Converter app with Docker CI/CD pipeline",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "currency",
+    "converter",
+    "nodejs",
+    "docker",
+    "cicd",
+    "devops"
+  ],
+  "author": "DevOps Engineer",
+  "license": "MIT"
+}
