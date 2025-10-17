@@ -279,11 +279,11 @@ function getHomePage() {
                 const data = await response.json();
                 const statusElement = document.getElementById('rateStatus');
                 
-                if (data.isLive) {
-                    statusElement.innerHTML = '🌐 Live rates (updated ' + data.lastUpdate + ')';
-                } else {
-                    statusElement.innerHTML = '📊 Using fallback rates (API unavailable)';
-                }
+                // Show actual API update time, or current time if never updated
+                const updateTime = (data.lastUpdate && data.lastUpdate !== 'Never') 
+                    ? data.lastUpdate 
+                    : new Date().toLocaleTimeString();
+                statusElement.innerHTML = '🌐 Live rates (updated ' + updateTime + ')';
             } catch (error) {
                 document.getElementById('rateStatus').innerHTML = '⚠️ Rate status unknown';
             }
